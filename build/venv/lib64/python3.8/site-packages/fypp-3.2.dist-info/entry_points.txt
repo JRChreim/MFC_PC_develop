@@ -1,0 +1,2 @@
+[console_scripts]
+fypp = fypp:run_fypp

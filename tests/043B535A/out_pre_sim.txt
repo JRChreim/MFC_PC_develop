@@ -1,0 +1,71 @@
+mfc: Found CMake: /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/cmake/bin/cmake.
+mfc: OK > (venv) Entered the Python virtual environment.
+                                      
+      .=++*:          -+*+=.          jrchreim@r004.ib.bridges2.psc.edu [Linux]
+     :+   -*-        ==   =* .        -----------------------------------------
+   :*+      ==      ++    .+-         --jobs 1
+  :*##-.....:*+   .#%+++=--+=:::.     --mpi
+  -=-++-======#=--**+++==+*++=::-:.   --no-gpu
+ .:++=----------====+*= ==..:%.....   --no-debug
+  .:-=++++===--==+=-+=   +.  :=       --targets pre_process and simulation
+  +#=::::::::=%=. -+:    =+   *:      -----------------------------------------------------------
+ .*=-=*=..    :=+*+:      -...--      $ ./mfc.sh [build, run, test, clean, count, packer] --help
+
+Run
+  Acquiring /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/tests/043B535A/case.py...
+  Configuration:
+    Input               /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/tests/043B535A/case.py
+    Job Name      (-#)  MFC
+    Engine        (-e)  interactive
+    Nodes         (-N)  1
+    Tasks (/node) (-n)  1
+    MPI Binary    (-b)  srun
+  Generating input files for pre_process...
+    
+    Generating pre_process.inp.
+      INFO: Forwarded 78/104 parameters.
+    
+    Generating pre_process/include/case.fpp.
+      INFO: Existing case.fpp file is up to date.
+    
+  Generating input files for simulation...
+    
+    Generating simulation.inp.
+      INFO: Forwarded 58/104 parameters.
+    
+    Generating simulation/include/case.fpp.
+      INFO: Case optimization is disabled. Use --case-optimization to enable it.
+      INFO: Existing case.fpp file is up to date.
+    
+  Building simulation:
+    --no-build specified, skipping...
+  Building syscheck:
+    --no-build specified, skipping...
+  Building pre_process:
+    --no-build specified, skipping...
+  Ensuring the Interactive Engine works (30s timeout) via syscheck:
+  
+    $ srun --ntasks-per-node 1 
+/ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/install/no-debug_no-gpu_mpi/bin/syscheck
+
+
+Error: MFC's syscheck (system check) failed to run successfully.
+Please review the output bellow and ensure that your system is configured correctly:
+
+STDOUT:
+ [TEST] MPI: call mpi_init(ierr)
+
+
+STDERR:
+*** An error occurred in MPI_Init
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+ Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error 
+messages, and not able to guarantee that all other processes were killed!
+srun: error: r004: task 0: Exited with exit code 1
+
+
+
+./mfc.sh: line 441: 82621 Terminated              python3 "$(pwd)/toolchain/mfc.py" "$@"
+mfc: (venv) Exiting the Python virtual environment.

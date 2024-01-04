@@ -1,0 +1,120 @@
+mfc: Found CMake: /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/cmake/bin/cmake.
+mfc: OK > (venv) Entered the Python virtual environment.
+                                      
+      .=++*:          -+*+=.          jrchreim@r002.ib.bridges2.psc.edu [Linux]
+     :+   -*-        ==   =* .        -----------------------------------------
+   :*+      ==      ++    .+-         --jobs 1
+  :*##-.....:*+   .#%+++=--+=:::.     --mpi
+  -=-++-======#=--**+++==+*++=::-:.   --no-gpu
+ .:++=----------====+*= ==..:%.....   --no-debug
+  .:-=++++===--==+=-+=   +.  :=       --targets pre_process and simulation
+  +#=::::::::=%=. -+:    =+   *:      -----------------------------------------------------------
+ .*=-=*=..    :=+*+:      -...--      $ ./mfc.sh [build, run, test, clean, count, packer] --help
+
+Run
+  Acquiring /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/tests/A83CADB5/case.py...
+  Configuration:
+    Input               /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/tests/A83CADB5/case.py
+    Job Name      (-#)  MFC
+    Engine        (-e)  interactive
+    Nodes         (-N)  1
+    Tasks (/node) (-n)  1
+    MPI Binary    (-b)  mpirun
+  Generating input files for pre_process...
+    
+    Generating pre_process.inp.
+      INFO: Forwarded 80/106 parameters.
+    
+    Generating pre_process/include/case.fpp.
+      INFO: Existing case.fpp file is up to date.
+    
+  Generating input files for simulation...
+    
+    Generating simulation.inp.
+      INFO: Forwarded 65/106 parameters.
+    
+    Generating simulation/include/case.fpp.
+      INFO: Case optimization is disabled. Use --case-optimization to enable it.
+      INFO: Existing case.fpp file is up to date.
+    
+  Building pre_process:
+    --no-build specified, skipping...
+  Building syscheck:
+    --no-build specified, skipping...
+  Building simulation:
+    --no-build specified, skipping...
+  Ensuring the Interactive Engine works (30s timeout) via syscheck:
+  
+    $ mpirun -np 1 /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/install/no-debug_no-gpu_mpi/bin/syscheck
+    
+  Running pre_process:
+
+    $ mpirun -np 1 /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/install/no-debug_no-gpu_mpi/bin/pre_process
+
+ Pre-processing a 299x0x0 case on 1 rank(s)
+ Processing patch           1
+ Processing patch           2
+ Processing patch           3
+ initial condition might have been altered due to enforcement of pTg-equilirium (relax = "T" activated)
+ Final Time   8.0110000000000042E-003
+
+    Done (in 0:00:01.417369)
+  Running simulation:
+
+    $ mpirun -np 1 /ocean/projects/phy230019p/jrchreim/MFC-JRChreim/build/install/no-debug_no-gpu_mpi/bin/simulation
+
+ Simulating a 299x0x0 case on 1 rank(s)
+ [  0%]  Time step        1 of 51 @ t_step = 0
+ [  2%]  Time step        2 of 51 @ t_step = 1
+ [  4%]  Time step        3 of 51 @ t_step = 2
+ [  6%]  Time step        4 of 51 @ t_step = 3
+ [  8%]  Time step        5 of 51 @ t_step = 4
+ [ 10%]  Time step        6 of 51 @ t_step = 5
+ [ 12%]  Time step        7 of 51 @ t_step = 6
+ [ 14%]  Time step        8 of 51 @ t_step = 7
+ [ 16%]  Time step        9 of 51 @ t_step = 8
+ [ 18%]  Time step       10 of 51 @ t_step = 9
+ [ 20%]  Time step       11 of 51 @ t_step = 10
+ [ 22%]  Time step       12 of 51 @ t_step = 11
+ [ 24%]  Time step       13 of 51 @ t_step = 12
+ [ 26%]  Time step       14 of 51 @ t_step = 13
+ [ 28%]  Time step       15 of 51 @ t_step = 14
+ [ 30%]  Time step       16 of 51 @ t_step = 15
+ [ 32%]  Time step       17 of 51 @ t_step = 16
+ [ 34%]  Time step       18 of 51 @ t_step = 17
+ [ 36%]  Time step       19 of 51 @ t_step = 18
+ [ 38%]  Time step       20 of 51 @ t_step = 19
+ [ 40%]  Time step       21 of 51 @ t_step = 20
+ [ 42%]  Time step       22 of 51 @ t_step = 21
+ [ 44%]  Time step       23 of 51 @ t_step = 22
+ [ 46%]  Time step       24 of 51 @ t_step = 23
+ [ 48%]  Time step       25 of 51 @ t_step = 24
+ [ 50%]  Time step       26 of 51 @ t_step = 25
+ [ 51%]  Time step       27 of 51 @ t_step = 26
+ [ 53%]  Time step       28 of 51 @ t_step = 27
+ [ 55%]  Time step       29 of 51 @ t_step = 28
+ [ 57%]  Time step       30 of 51 @ t_step = 29
+ [ 59%]  Time step       31 of 51 @ t_step = 30
+ [ 61%]  Time step       32 of 51 @ t_step = 31
+ [ 63%]  Time step       33 of 51 @ t_step = 32
+ [ 65%]  Time step       34 of 51 @ t_step = 33
+ [ 67%]  Time step       35 of 51 @ t_step = 34
+ [ 69%]  Time step       36 of 51 @ t_step = 35
+ [ 71%]  Time step       37 of 51 @ t_step = 36
+ [ 73%]  Time step       38 of 51 @ t_step = 37
+ [ 75%]  Time step       39 of 51 @ t_step = 38
+ [ 77%]  Time step       40 of 51 @ t_step = 39
+ [ 79%]  Time step       41 of 51 @ t_step = 40
+ [ 81%]  Time step       42 of 51 @ t_step = 41
+ [ 83%]  Time step       43 of 51 @ t_step = 42
+ [ 85%]  Time step       44 of 51 @ t_step = 43
+ [ 87%]  Time step       45 of 51 @ t_step = 44
+ [ 89%]  Time step       46 of 51 @ t_step = 45
+ [ 91%]  Time step       47 of 51 @ t_step = 46
+ [ 93%]  Time step       48 of 51 @ t_step = 47
+ [ 95%]  Time step       49 of 51 @ t_step = 48
+ [ 97%]  Time step       50 of 51 @ t_step = 49
+ Final Time   5.2869565217391191E-004
+
+    Done (in 0:00:01.790335)
+mfc: (venv) Exiting the Python virtual environment.
